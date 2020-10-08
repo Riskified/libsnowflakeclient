@@ -293,7 +293,8 @@ if (MOCK)
     message("libcmocka is located at " ${CMOCKA_LIB})
 endif ()
 
-add_library(snowflakeclient STATIC ${SOURCE_FILES} ${SOURCE_FILES_PUT_GET} ${SOURCE_FILES_CPP_WRAPPER})
+# add_library(snowflakeclient STATIC ${SOURCE_FILES} ${SOURCE_FILES_PUT_GET} ${SOURCE_FILES_CPP_WRAPPER})
+add_library(snowflakeclient STATIC ${SOURCE_FILES} )
 
 set_target_properties(snowflakeclient PROPERTIES LINKER_LANGUAGE CXX)
 set_property(TARGET snowflakeclient PROPERTY C_STANDARD 99)

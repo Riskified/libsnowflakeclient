@@ -263,7 +263,7 @@ sf_bool STDCALL http_perform(CURL *curl,
         } else {
             ocsp_check = SF_OCSP_CHECK;
         }
-        res = curl_easy_setopt(curl, CURLOPT_SSL_SF_OCSP_CHECK, ocsp_check);
+        res = curl_easy_setopt(curl, CURLOPT_SSL_VERIFYSTATUS, ocsp_check);
         if (res != CURLE_OK) {
             log_error("Unable to set OCSP check enable/disable [%s]",
                       curl_easy_strerror(res));

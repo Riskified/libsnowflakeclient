@@ -484,7 +484,7 @@ SF_STATUS STDCALL snowflake_global_init(
     SF_HEADER_USER_AGENT = NULL;
     SSL_VERSION = CURL_SSLVERSION_TLSv1_2;
     DEBUG = SF_BOOLEAN_FALSE;
-    SF_OCSP_CHECK = SF_BOOLEAN_TRUE;
+    SF_OCSP_CHECK = SF_BOOLEAN_FALSE;
 
     _snowflake_memory_hooks_setup(hooks);
     sf_memory_init();
@@ -608,7 +608,7 @@ SF_CONNECT *STDCALL snowflake_init() {
         alloc_buffer_and_copy(&sf->protocol, "https");
         sf->passcode = NULL;
         sf->passcode_in_password = SF_BOOLEAN_FALSE;
-        sf->insecure_mode = SF_BOOLEAN_FALSE;
+        sf->insecure_mode = SF_BOOLEAN_TRUE;
         sf->autocommit = SF_BOOLEAN_TRUE;
         sf->timezone = NULL;
         sf->service_name = NULL;
