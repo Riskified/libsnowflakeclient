@@ -195,7 +195,7 @@ set(SOURCE_FILES_CPP_WRAPPER
 
 if (LINUX)
     # Linux
-    find_library(OOB_LIB libtelemetry.a PATHS deps-build/${PLATFORM}/${CMAKE_BUILD_TYPE}/oob/lib/ REQUIRED)
+    find_library(OOB_LIB libtelemetry.a PATHS deps-build/${PLATFORM}/${CMAKE_BUILD_TYPE}/oob/lib/ QUIET)
     find_library(CURL_LIB libcurl.a PATHS deps-build/${PLATFORM}/${CMAKE_BUILD_TYPE}/curl/lib/ REQUIRED)
     find_library(SSL_LIB libssl.a PATHS deps-build/${PLATFORM}/${CMAKE_BUILD_TYPE}/openssl/lib/ REQUIRED)
     find_library(CRYPTO_LIB libcrypto.a PATHS deps-build/${PLATFORM}/${CMAKE_BUILD_TYPE}/openssl/lib/ REQUIRED)
@@ -209,7 +209,7 @@ if (LINUX)
 endif ()
 
 if (APPLE)
-    find_library(OOB_LIB libtelemetry.a PATHS deps-build/${PLATFORM}/${CMAKE_BUILD_TYPE}/oob/lib/ REQUIRED)
+    find_library(OOB_LIB libtelemetry.a PATHS deps-build/${PLATFORM}/${CMAKE_BUILD_TYPE}/oob/lib/ QUIET)
     find_library(CURL_LIB libcurl.a PATHS deps-build/${PLATFORM}/${CMAKE_BUILD_TYPE}/curl/lib/ REQUIRED)
     find_library(SSL_LIB libssl.a PATHS deps-build/${PLATFORM}/${CMAKE_BUILD_TYPE}/openssl/lib/ REQUIRED)
     find_library(CRYPTO_LIB libcrypto.a PATHS deps-build/${PLATFORM}/${CMAKE_BUILD_TYPE}/openssl/lib/ REQUIRED)
@@ -262,6 +262,7 @@ if (APPLE)
             deps-build/${PLATFORM}/${CMAKE_BUILD_TYPE}/aws/include
             deps-build/${PLATFORM}/${CMAKE_BUILD_TYPE}/azure/include
             deps-build/${PLATFORM}/${CMAKE_BUILD_TYPE}/cmocka/include
+            /usr/local/opt/openssl/include
             include
             lib)
 endif()
